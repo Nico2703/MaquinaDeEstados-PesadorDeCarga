@@ -10,4 +10,7 @@ Luego de superado este valor, emitirá un mensaje de sobrecarga.
 Estos mensajes serán visuales y sonoros.
 ### Diagrama de estados y transiciones
  ![./Recursos/Diagrama.png](https://github.com/Nico2703/TP-MaquinaDeEstados-PesadorDeCarga/blob/master/Recursos/Diagrama.png)
- 
+ - __SET__:  Bandera de fin de inicialización
+ - __Carga__:  Carga sensada en tiempo real
+ - __Carga_máx__:  Carga máxima seteada
+ - __Tolerancia__:  Tolerancia admisible
