@@ -9,3 +9,5 @@ Una vez alcanzada la carga máxima y mientras se encuentre dentro de la toleranc
 Luego de superado este valor, emitirá un mensaje de sobrecarga.
 Estos mensajes serán visuales y sonoros.
 ### Diagrama de estados y transiciones
+ ![./Recursos/Diagrama.png](https://github.com/Nico2703/TP-MaquinaDeEstados-PesadorDeCarga/blob/master/Recursos/Diagrama.png)
+ 
