@@ -3,9 +3,9 @@
 #include <stdio.h>
 
 typedef enum {
-	espera = 1,
-	avisomaximo = 0,
-	avisosobrecarga = 0,
+	espera = 1;
+    avisomaximo = 0;
+    avisosobrecarga = 0;
 }estados_c;
 
 typedef struct {
