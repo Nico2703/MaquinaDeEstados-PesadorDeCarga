@@ -10,9 +10,9 @@ typedef enum {
 }estados_c;
 
 typedef struct {
-	char carga;         // Carga actual
-	char carga_max;     // Carga seteada
-	char tolerancia;    // Delta de carga
+	int carga;         // Carga actual
+	int carga_max;     // Carga seteada
+	int tolerancia;    // Delta de carga
 }carga_c;
 
 carga_c f_inicio(void); // Lee el archivo de configuracion y carga las variables.

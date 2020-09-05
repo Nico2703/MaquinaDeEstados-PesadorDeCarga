@@ -29,28 +29,44 @@ carga_c f_inicio(void)
 
 estados_c f_espera(carga_c config)
 {
+    estados_c estado;
     while (config.carga < config.carga_max)
-        printf("Sistema en espera");
-    estados_c estado = avisomaximo;
+    {
+        printf("Sistema en espera\n");
+        system ("PAUSE");
+    }
+    estado = avisomaximo;
     return (estado);
 }
 
 estados_c f_cargamax(carga_c config)
 {
-    while (config.carga_max <= config.carga < config.carga_max + config.tolerancia)
-        printf("Carga completa");
+    estados_c estado;
+    while (config.carga >= config.carga_max && config.carga < config.carga_max + config.tolerancia)
+    {
+        printf("Carga completa\n");
+        system ("PAUSE");
+    }
     if (config.carga < config.carga_max)
-        estados_c estado = espera;
+    {
+        estado = espera;
         return (estado);
+    }
     if (config.carga >= config.carga_max + config.tolerancia)
-        estados_c estado = avisosobrecarga;
+    {
+        estado = avisosobrecarga;
         return (estado);
+    }
 }
 
 estados_c f_sobrecarga(carga_c config)
 {
+    estados_c estado;
     while (config.carga >= config.carga_max + config.tolerancia)
-        printf("Sobrecarga");
-    estados_c estado = avisomaximo;
+    {
+        printf("Sobrecarga\n");
+        system ("PAUSE");
+    }
+    estado = avisomaximo;
     return (estado);
 }
