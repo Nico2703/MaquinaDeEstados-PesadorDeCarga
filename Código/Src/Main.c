@@ -21,9 +21,13 @@ int main() {
 carga_c f_inicio(void)
 {
     carga_c aux;
-    aux.carga = 1;
-    aux.carga_max = 750;
-    aux.tolerancia = 75;
+    printf ("Carga maxima admisible: ");
+    scanf ("%d",&aux.carga_max);
+    printf ("Tolerancia: ");
+    scanf ("%d",&aux.tolerancia);
+    printf ("Carga actual: ");
+    scanf ("%d",&aux.carga);
+    fflush(stdin);
     return aux;
 }
 
@@ -32,8 +36,8 @@ estados_c f_espera(carga_c config)
     estados_c estado;
     while (config.carga < config.carga_max)
     {
-        printf("Sistema en espera\n");
-        system ("PAUSE");
+	  printf("Sistema en espera\n");
+      system("PAUSE");
     }
     estado = avisomaximo;
     return (estado);
@@ -56,7 +60,7 @@ estados_c f_cargamax(carga_c config)
     {
         estado = avisosobrecarga;
         return (estado);
-    }
+    }  
 }
 
 estados_c f_sobrecarga(carga_c config)
