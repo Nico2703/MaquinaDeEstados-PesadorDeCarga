@@ -1,4 +1,4 @@
-#include "Lib.h"
+#include "Lib.h"  
 
 int main() {
     carga_c config;
