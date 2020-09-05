@@ -3,9 +3,9 @@
 int main() {
     carga_c config;
     estados_c estado = espera; 
-
+    
     config = f_inicio();
-    while (config.carga>0) {
+    while (1) {
         switch (estado) {
         case espera: estado = f_espera(config);
             break;
@@ -20,33 +20,37 @@ int main() {
 
 carga_c f_inicio(void)
 {
-    carga_c config;
-    config.carga = 1;
-    config.carga_max = 750;
-    config.tolerancia = 75;
-    return config;
+    carga_c aux;
+    aux.carga = 1;
+    aux.carga_max = 750;
+    aux.tolerancia = 75;
+    return aux;
 }
 
-estados_c f_espera(config)
+estados_c f_espera(carga_c config)
 {
-    while (carga < carga_max)
+    while (config.carga < config.carga_max)
         printf("Sistema en espera");
-    return (avisomaximo = 1);
+    estados_c estado = avisomaximo;
+    return (estado);
 }
 
-estados_c f_avisomaximo(config)
+estados_c f_cargamax(carga_c config)
 {
-    while (carga_max <= carga < carga_max + tolerancia)
+    while (config.carga_max <= config.carga < config.carga_max + config.tolerancia)
         printf("Carga completa");
-    if (carga < carga_max)
-        return (espera = 1);
-    if (carga >= carga_max + tolerancia)
-        return (avisosobrecarga = 1);
+    if (config.carga < config.carga_max)
+        estados_c estado = espera;
+        return (estado);
+    if (config.carga >= config.carga_max + config.tolerancia)
+        estados_c estado = avisosobrecarga;
+        return (estado);
 }
 
-estados_c f_avisosobrecarga(config)
+estados_c f_sobrecarga(carga_c config)
 {
-    while (carga >= carga_max + tolerancia)
+    while (config.carga >= config.carga_max + config.tolerancia)
         printf("Sobrecarga");
-    return (avisomaximo = 1);
+    estados_c estado = avisomaximo;
+    return (estado);
 }

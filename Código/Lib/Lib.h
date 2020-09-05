@@ -1,11 +1,12 @@
 #ifndef LIB
 #define LIB
 #include <stdio.h>
+#include <stdlib.h>
 
 typedef enum {
-	espera = 1,
-    avisomaximo = 0,
-    avisosobrecarga = 0,
+	 espera = 0,
+     avisomaximo = 1,
+     avisosobrecarga = 2
 }estados_c;
 
 typedef struct {
