@@ -10,21 +10,18 @@ int main() {
     carga_c config;
     estados_c estado = espera; 
     
-    //config = f_inicio();
     while (1) {
+    	config = f_inicio();
         switch (estado) {
         case espera: 
-        config = f_inicio();
 		estado = f_espera(config);
-            break;
+        break;
         case avisomaximo: 
-        config = f_inicio();
 		estado = f_cargamax(config);
-            break;
+        break;
         case avisosobrecarga: 
-        config = f_inicio();
 		estado = f_sobrecarga(config);
-            break;
+        break;
         }
     }
     return 0;

@@ -4,9 +4,9 @@
 #include <stdlib.h>
 
 typedef enum {
-	espera = 0,
-    avisomaximo = 1,
-    avisosobrecarga = 2
+	 espera = 0,
+     avisomaximo = 1,
+     avisosobrecarga = 2
 }estados_c;
 
 typedef struct {
@@ -15,9 +15,10 @@ typedef struct {
 	int tolerancia;    // Delta de carga
 }carga_c;
 
-carga_c f_inicio(void); 
+carga_c f_inicio(void);
 estados_c f_espera(carga_c);
 estados_c f_cargamax(carga_c);
 estados_c f_sobrecarga(carga_c);
 
 #endif
+
