@@ -28,7 +28,7 @@ carga_c f_inicio(void)
     {
     carga_c aux;
     string comentarios;
-    aux.carga=0;
+    //aux.carga=0;
 	archivo.open("Config.txt",ios::in);
 	if (archivo.is_open())
 	{	
@@ -38,6 +38,8 @@ carga_c f_inicio(void)
 		cout<<"Tolerancia: "<<aux.tolerancia<<endl;
     }
 	archivo.close(); 
+	printf ("\nCarga: ");
+	cin>>aux.carga;
 	return (aux);
 	}
 	else
@@ -51,7 +53,7 @@ estados_c f_espera(carga_c config)
     estados_c estado;
     while (config.carga < config.carga_max)
     {
-	  printf("Sistema en espera\n");
+	  printf("Sistema en espera\n\n");
       system("PAUSE");
     }
     estado = avisomaximo;
@@ -63,7 +65,7 @@ estados_c f_cargamax(carga_c config)
     estados_c estado;
     while (config.carga >= config.carga_max && config.carga < config.carga_max + config.tolerancia)
     {
-        printf("Carga completa\n");
+        printf("Carga completa\n\n");
         system ("PAUSE");
     }
     if (config.carga < config.carga_max)
@@ -83,7 +85,7 @@ estados_c f_sobrecarga(carga_c config)
     estados_c estado;
     while (config.carga >= config.carga_max + config.tolerancia)
     {
-        printf("Sobrecarga\n");
+        printf("Sobrecarga\n\n");
         system ("PAUSE");
     }
     estado = avisomaximo;
