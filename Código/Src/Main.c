@@ -1,4 +1,10 @@
-#include "Lib.h"  
+# include "Lib.h"
+# include <cstdlib>
+# include <iostream>
+# include <fstream>
+
+using namespace std;
+fstream archivo;
 
 int main() {
     carga_c config;
@@ -19,16 +25,25 @@ int main() {
 }
 
 carga_c f_inicio(void)
-{
+    {
     carga_c aux;
-    printf ("Carga maxima admisible: ");
-    scanf ("%d",&aux.carga_max);
-    printf ("Tolerancia: ");
-    scanf ("%d",&aux.tolerancia);
-    printf ("Carga actual: ");
-    scanf ("%d",&aux.carga);
-    fflush(stdin);
-    return aux;
+    string comentarios;
+    aux.carga=0;
+	archivo.open("Config.txt",ios::in);
+	if (archivo.is_open())
+	{	
+	while ( !archivo.eof() ){
+		archivo>>comentarios>>aux.carga_max>>comentarios>>aux.tolerancia;
+		cout<<"Carga maxima: "<<aux.carga_max<<endl;
+		cout<<"Tolerancia: "<<aux.tolerancia<<endl;
+    }
+	archivo.close(); 
+	return (aux);
+	}
+	else
+	{
+		cout<<"\nArchivo no encontrado"<<endl;
+	}
 }
 
 estados_c f_espera(carga_c config)
