@@ -2,9 +2,9 @@
 #define LIB
 #include <stdio.h>
 #include <stdlib.h>
-# include <cstdlib>
-# include <iostream>
-# include <fstream>
+#include <cstdlib>
+#include <iostream>
+#include <fstream>
 
 typedef enum {
 	 espera = 0,
