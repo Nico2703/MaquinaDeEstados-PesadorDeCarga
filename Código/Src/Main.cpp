@@ -62,7 +62,7 @@ carga_c f_lectura(void)
 estados_c f_espera(carga_c config)
 {
     estados_c estado;
-    while (config.carga < config.carga_max)
+    if (config.carga < config.carga_max)
     {
       system ("color 02");
 	  printf("\nSistema en espera");
@@ -76,7 +76,7 @@ estados_c f_espera(carga_c config)
 estados_c f_cargamax(carga_c config)
 {
     estados_c estado;
-    while (config.carga >= config.carga_max && config.carga < config.carga_max + config.tolerancia)
+    if (config.carga >= config.carga_max && config.carga < config.carga_max + config.tolerancia)
     {
         system ("color 06");
 		printf("\nCarga completa");
@@ -98,7 +98,7 @@ estados_c f_cargamax(carga_c config)
 estados_c f_sobrecarga(carga_c config)
 {
     estados_c estado;
-    while (config.carga >= config.carga_max + config.tolerancia)
+    if (config.carga >= config.carga_max + config.tolerancia)
     {
         system ("color 04");
 		printf("\nSobrecarga");
