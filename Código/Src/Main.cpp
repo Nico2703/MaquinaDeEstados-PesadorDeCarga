@@ -78,7 +78,7 @@ estados_c f_cargamax(carga_c config)
     estados_c estado;
     while (config.carga >= config.carga_max && config.carga < config.carga_max + config.tolerancia)
     {
-        system ("color 04");
+        system ("color 06");
 		printf("\nCarga completa");
         estado = avisomaximo;
         return (estado);
