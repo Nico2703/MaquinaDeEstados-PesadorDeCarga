@@ -6,17 +6,20 @@ fstream archivo;
 int main() {
     carga_c config;
     estados_c estado = espera; 
+    config = f_inicio();
     
     while (1) {
-    	config = f_inicio();
         switch (estado) {
         case espera: 
+        config = f_lectura();
 		estado = f_espera(config);
         break;
         case avisomaximo: 
+        config = f_lectura();
 		estado = f_cargamax(config);
         break;
         case avisosobrecarga: 
+        config = f_lectura();
 		estado = f_sobrecarga(config);
         break;
         }
@@ -38,8 +41,6 @@ carga_c f_inicio(void)
 		cout<<"Tolerancia: "<<aux.tolerancia<<endl;
     }
 	archivo.close(); 
-	printf ("\nCarga: ");
-	cin>>aux.carga;
 	return (aux);
 	}
 	else
@@ -48,13 +49,23 @@ carga_c f_inicio(void)
 	}
 }
 
+carga_c f_lectura(void)
+{
+	system ("CLS");
+    carga_c aux;
+    cout<<"Carga maxima: "<<aux.carga_max<<endl;
+	cout<<"Tolerancia: "<<aux.tolerancia<<endl;
+	aux.carga = rand() % 100;                          //Simula la señal de entrada
+	return (aux);
+}
+
 estados_c f_espera(carga_c config)
 {
     estados_c estado;
     while (config.carga < config.carga_max)
     {
-	  printf("Sistema en espera\n\n");
-      system("PAUSE");
+      system ("color 02");
+	  printf("\nSistema en espera");
       estado = espera;
       return (estado);
     }
@@ -67,8 +78,8 @@ estados_c f_cargamax(carga_c config)
     estados_c estado;
     while (config.carga >= config.carga_max && config.carga < config.carga_max + config.tolerancia)
     {
-        printf("Carga completa\n\n");
-        system ("PAUSE");
+        system ("color 04");
+		printf("\nCarga completa");
         estado = avisomaximo;
         return (estado);
     }
@@ -89,8 +100,8 @@ estados_c f_sobrecarga(carga_c config)
     estados_c estado;
     while (config.carga >= config.carga_max + config.tolerancia)
     {
-        printf("Sobrecarga\n\n");
-        system ("PAUSE");
+        system ("color 04");
+		printf("\nSobrecarga");
         estado = avisosobrecarga;
         return (estado);
     }

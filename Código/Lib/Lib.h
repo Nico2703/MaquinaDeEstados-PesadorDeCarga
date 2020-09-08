@@ -19,6 +19,7 @@ typedef struct {
 }carga_c;
 
 carga_c f_inicio(void);
+carga_c f_lectura(void);
 estados_c f_espera(carga_c);
 estados_c f_cargamax(carga_c);
 estados_c f_sobrecarga(carga_c);
