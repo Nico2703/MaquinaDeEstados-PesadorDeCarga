@@ -1,7 +1,4 @@
 # include "Lib.h"
-# include <cstdlib>
-# include <iostream>
-# include <fstream>
 
 using namespace std;
 fstream archivo;
