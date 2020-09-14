@@ -12,7 +12,7 @@ carga_c f_inicio(void)
 	if (archivo.is_open())
 	{	
 	while ( !archivo.eof() ){
-		archivo>>comentarios>>aux.carga_max>>comentarios>>aux.tolerancia;
+		archivo>>comentarios>>comentarios>>aux.carga_max>>comentarios>>comentarios>>aux.tolerancia;
 		cout<<"Carga maxima: "<<aux.carga_max<<endl;
 		cout<<"Tolerancia: "<<aux.tolerancia<<endl;
     }

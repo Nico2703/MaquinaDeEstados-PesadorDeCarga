@@ -1,4 +1,4 @@
 #Carga_maxima
-60
+carga_max 50
 #Tolerancia
-10
+tolerancia 8
