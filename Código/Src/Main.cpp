@@ -6,17 +6,15 @@ int main() {
     config = f_inicio();
     
     while (1) {
+    	config = f_lectura();
         switch (estado) {
         case espera: 
-        config = f_lectura();
 		estado = f_espera(config);
         break;
         case avisomaximo: 
-        config = f_lectura();
 		estado = f_cargamax(config);
         break;
         case avisosobrecarga: 
-        config = f_lectura();
 		estado = f_sobrecarga(config);
         break;
         }
