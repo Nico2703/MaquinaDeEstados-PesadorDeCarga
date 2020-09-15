@@ -1,23 +1,14 @@
 # include "Lib.h"
 
 int main() {
+	estados_c (*fsm[])(carga_c)={f_espera,f_cargamax,f_sobrecarga};
     carga_c config;
     estados_c estado = espera; 
     config = f_inicio();
     
     while (1) {
     	config = f_lectura();
-        switch (estado) {
-        case espera: 
-		estado = f_espera(config);
-        break;
-        case avisomaximo: 
-		estado = f_cargamax(config);
-        break;
-        case avisosobrecarga: 
-		estado = f_sobrecarga(config);
-        break;
-        }
+    	estado = (*fsm[estado])(config);
     }
     return 0;
 }
