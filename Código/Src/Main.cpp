@@ -5,7 +5,7 @@ int main() {
     carga_c config;
     estados_c estado = espera; 
     config = f_inicio(); 
-    Sleep(3000);
+    Sleep(3000);                               //Se colocaron solo para la prueba del ejecutable
     while (1) {
     	config = f_lectura();
     	estado = (*fsm[estado])(config);

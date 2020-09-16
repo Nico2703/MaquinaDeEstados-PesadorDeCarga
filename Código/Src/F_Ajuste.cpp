@@ -33,11 +33,11 @@ carga_c f_inicio(void)
 carga_c f_lectura(void)
 {
 	system ("CLS");
-    carga_c aux2;
+    carga_c aux;
     cout<<"PESADOR ACTIVADO"<<endl;
     cout<<"DATOS DE AJUSTE"<<endl;
-    cout<<"Carga maxima: "<<aux2.carga_max<<endl;
-	cout<<"Tolerancia: "<<aux2.tolerancia<<endl; 
-	aux2.carga = rand() % 100;                         //Simula la señal de entrada                        
-	return (aux2);
+    cout<<"Carga maxima: "<<aux.carga_max<<endl;
+	cout<<"Tolerancia: "<<aux.tolerancia<<endl; 
+	aux.carga = rand() % 100;                         //Simula la señal de entrada                        
+	return (aux);
 }
