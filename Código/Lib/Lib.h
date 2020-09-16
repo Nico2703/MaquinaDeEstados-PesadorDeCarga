@@ -5,6 +5,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <fstream>
+#include <windows.h>
 
 typedef enum {
 	 espera = 0,
@@ -23,7 +24,6 @@ carga_c f_lectura(void);
 estados_c f_espera(carga_c);
 estados_c f_cargamax(carga_c);
 estados_c f_sobrecarga(carga_c);
-estados_c (*fsm[3])(carga_c);
 
 #endif
 
